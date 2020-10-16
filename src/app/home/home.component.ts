@@ -100,7 +100,7 @@ export class HomeComponent {
         next: (res: any) => {
           console.log('filters returned', res);
           // filterList = res;
-          res.array.forEach(element => {
+          res.data.forEach(element => {
             states.push(element);
           });
         },

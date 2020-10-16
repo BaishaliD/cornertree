@@ -15,4 +15,8 @@ export class SignupComponent implements OnInit {
     document.getElementById('toast').style.display = "none";
   }
 
+  signUp(){
+      
+  }
+
 }
