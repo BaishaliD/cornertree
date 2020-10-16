@@ -6,6 +6,7 @@ const port = 8000;
 const bodyParser = require('body-parser');
 
 //Middlewares
+app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 app.use(cors());
 
