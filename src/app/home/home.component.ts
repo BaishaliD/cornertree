@@ -6,18 +6,19 @@ import { FormsModule } from '@angular/forms';
 import {Observable} from 'rxjs';
 import {debounceTime, distinctUntilChanged, map, filter} from 'rxjs/operators';
 
-type State = {filter: string, value: string};
+type State = {id:number, name:string};
 
-// const states: State[] = [
-//   {id: 0, name: 'Alabama'},
-//   {id: 1, name: 'Alaska'},
-//   {id: 2, name: 'American Samoa'},
-//   {id: 3, name: 'Arizona'},
-//   {id: 4, name: 'Arkansas'},
-//   {id: 5, name: 'California'},
-//   {id: 6, name: 'Colorado'},
-//   {id: 7, name: 'Connecticut'},
-//   {id: 8, name: 'Delaware'},
+var states: State[] = [
+  {id: 0, name: 'Alabama'},
+  {id: 1, name: 'Alaska'},
+  {id: 2, name: 'American Samoa'},
+  {id: 3, name: 'Arizona'},
+  {id: 4, name: 'Arkansas'},
+  {id: 5, name: 'California'},
+  {id: 6, name: 'Colorado'},
+  {id: 7, name: 'Connecticut'},
+  {id: 8, name: 'Delaware'}
+];
 //   {id: 9, name: 'District Of Columbia'},
 //   {id: 10, name: 'Federated States Of Micronesia'},
 //   {id: 11, name: 'Florida'},
@@ -70,7 +71,7 @@ type State = {filter: string, value: string};
 //   {id: 58, name: 'Wyoming'}
 // ];
 
-const filterList: State[] = [{"filter": "skill", "value":"java"}];
+//const filterList: State[] = [{"filter": "skill", "value":"java"}];
 
 @Component({
   selector: 'app-home',
@@ -81,14 +82,14 @@ const filterList: State[] = [{"filter": "skill", "value":"java"}];
 export class HomeComponent {
   public model: State;
 
-  formatter = (state: State) => state.value;
+  formatter = (state: State) => state.name;
 
   search = (text$: Observable<string>) => text$.pipe(
     debounceTime(200),
     distinctUntilChanged(),
     filter(term => term.length >= 2),
-    //map(term => states.filter(state => new RegExp(term, 'mi').test(state.name)).slice(0, 10))
-    map(term => filterList.filter(state => new RegExp(term, 'mi').test(state.value)).slice(0, 10))
+    map(term => states.filter(state => new RegExp(term, 'mi').test(state.name)).slice(0, 10))
+    //map(term => filterList.filter(state => new RegExp(term, 'mi').test(state.value)).slice(0, 10))
   )
 
   constructor(public http: HttpClient) {}
