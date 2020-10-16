@@ -88,4 +88,21 @@ export class HomeComponent {
     map(term => states.filter(state => new RegExp(term, 'mi').test(state.name)).slice(0, 10))
   )
 
+  constructor(public http: HttpClient) {}
+
+  ngOnInit(): void {
+
+    console.log("home page loaded");
+    
+    this.http
+      .get('/cornertree/api/filter')
+      .subscribe({
+        next: (res: any) => {
+          console.log('filters returned', res);
+        },
+        error: (err) => console.log('error in getting filters', err),
+      });
+  }
+
 }
+
