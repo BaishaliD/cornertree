@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { JobPostingComponent } from './job-posting/job-posting.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SignupComponent } from './signup/signup.component';
 
 //import { HomeC } from './user/add-user/add-user.component';
 //import { AllUsersComponent } from './user/all-users/all-users.component';
@@ -10,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'job-posting', component: JobPostingComponent},
+  {path: 'sign-up', component: SignupComponent},
 //   {path: 'logout', redirectTo: '/add-user', pathMatch: 'full'},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
 ];

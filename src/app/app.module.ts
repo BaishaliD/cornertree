@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { SignupComponent } from './signup/signup.component';
 import { JobPostingComponent } from './job-posting/job-posting.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { Ng2CompleterModule } from "ng2-completer";
@@ -15,6 +16,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppComponent,
     HomeComponent,
     JobPostingComponent,
+    SignupComponent
     // Ng2CompleterModule
   ],
   imports: [

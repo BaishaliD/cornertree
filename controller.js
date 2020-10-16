@@ -44,7 +44,7 @@ module.exports.createJob = async function(req,res){
             filter.push({"filter":"skill","value":newJob.coreSkills[i]});
         }
         filter.push({"filter":"location","value" : newJob.location});
-        filter.push({"filter":"jobRole","jobRole" : newJob.jobRole});
+        filter.push({"filter":"jobRole","value" : newJob.jobRole});
 
         console.log("new job created");
         res.status(200).send({
