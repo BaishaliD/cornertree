@@ -1,1 +1,53 @@
 <p>job-posting works!</p>
+
+<div id="toast" class="jumbotron">
+    <h1 class="display-4">Job posted!!</h1>
+    <p class="lead">Would you like to share this Job Posting on social media?</p>
+      <img height="50" width="50" src="https://www.flaticon.com/svg/static/icons/svg/174/174848.svg">
+      <img height="50" width="50" src="https://www.flaticon.com/svg/static/icons/svg/145/145807.svg">
+    
+  </div>
+
+<form id="form" class="col-4">
+    <div class="form-group">
+      <label for="firstName">Job role</label>
+      <input type="text" class="form-control" id="jobRole" [(ngModel)]="jobRole" name="jobRole" required>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Function</label>
+      <input type="text" class="form-control" id="function" [(ngModel)]="function" name="function" required>
+    </div>
+    <div class="form-group">
+        <label for="firstName">Sub Function</label>
+        <input type="text" class="form-control" id="subFunction" [(ngModel)]="subFunction" name="subFunction" required>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Company</label>
+        <input type="text" class="form-control" id="company" [(ngModel)]="company" name="company" required>
+      </div>
+      <div class="form-group">
+        <label for="firstName">Core skills</label>
+        <input type="text" class="form-control" id="coreSkills" [(ngModel)]="coreSkills" name="coreSkills" required>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Soft skills</label>
+        <input type="text" class="form-control" id="softSkills" [(ngModel)]="softSkills" name="softSkills" required>
+      </div>
+      <div class="form-group">
+        <label for="firstName">Location</label>
+        <input type="text" class="form-control" id="location" [(ngModel)]="location" name="location" required>
+      </div>
+      <div class="form-group">
+        <label for="lastName">PIN</label>
+        <input type="number" class="form-control" id="pin" [(ngModel)]="pin" name="pin" required>
+      </div>
+      <div class="form-group">
+        <label for="firstName">Compensation</label>
+        <input type="number" class="form-control" id="compensation" [(ngModel)]="compensation" name="compensation" required>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Job description</label>
+        <input type="text" class="form-control" id="jd" [(ngModel)]="jd" name="jd" required>
+      </div>
+    <button class="btn btn-primary" (click)="postJob()">Add</button>
+  </form>

@@ -17,16 +17,16 @@ export class HomeComponent implements OnInit {
 
   signUp(){
 
-    // this.http
-    //   .get("http://localhost:8000/cornertree/api/signup",{
-    //     params : {userID : "1"}
-    //   })
-    //   .subscribe({
-    //     next: (res:any) => {
-    //       console.log("response returned", res);
-    //     },
-    //     error: (err) => console.log("error in get req",err)
-    //   })
+    this.http
+      .get("api/signup",{
+        params : {userID : "1"}
+      })
+      .subscribe({
+        next: (res:any) => {
+          console.log("response returned", res);
+        },
+        error: (err) => console.log("error in get req",err)
+      })
   }
 
 }
