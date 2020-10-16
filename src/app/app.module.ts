@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { JobPostingComponent } from './job-posting/job-posting.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { Ng2CompleterModule } from "ng2-completer";
 
 @NgModule({
@@ -22,7 +23,8 @@ import { JobPostingComponent } from './job-posting/job-posting.component';
     CommonModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent],
