@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 8000;
+const port = 8080;
 // const db = require('./config/mongoose');
 //const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 //const mongoose = require('mongoose');
 
 // const mongoose = require('mongoose');
- const connection = "mongodb+srv://baishali:<Baishali123!>@<cornertree>/<baishali>?retryWrites=true&w=majority";
+// const connection = "mongodb+srv://baishali:<Baishali123!>@<cornertree>/<baishali>?retryWrites=true&w=majority";
 // mongoose.connect(connection,{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
 //     .then(() => {
 //         console.log("Database Connected Successfully");
@@ -38,22 +38,30 @@ var db;
 //process.env.MONGODB_URI
 
 //Connect to the database before starting the application server.
-mongodb.MongoClient.connect( connection || "mongodb://localhost:27017/test", function (err, client) {
-  if (err) {
-    console.log(err);
-    process.exit(1);
-  }
+// mongodb.MongoClient.connect( connection || "mongodb://localhost:27017/test", function (err, client) {
+//   if (err) {
+//     console.log(err);
+//     process.exit(1);
+//   }
 
-  // Save database object from the callback for reuse.
-  db = client.db();
-  console.log("Database connection ready");
+//   // Save database object from the callback for reuse.
+//   db = client.db();
+//   console.log("Database connection ready");
 
-  // Initialize the app.
-  var server = app.listen(process.env.PORT || 8080, function () {
+//   // Initialize the app.
+//   var server = app.listen(process.env.PORT || 8080, function () {
+//     var port = server.address().port;
+//     console.log("App now running on port", port);
+//   });
+// });
+
+
+
+// Initialize the app.
+var server = app.listen(process.env.PORT || 8080, function () {
     var port = server.address().port;
     console.log("App now running on port", port);
   });
-});
 
 
 //api routes
