@@ -47,6 +47,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {}
 
   searchJob(){
-    console.log("input is", input)
+    console.log("input is", this.input)
   }
 }
