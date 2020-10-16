@@ -6,9 +6,9 @@ const port = 8000;
 const bodyParser = require('body-parser');
 
 //Middlewares
-app.use(express.static(__dirname + "/public"));
+// app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
-app.use(cors());
+// app.use(cors());
 
 //Route middleware
 // app.use('/cornertree/api',require('./route'));
