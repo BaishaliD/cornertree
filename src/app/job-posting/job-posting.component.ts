@@ -41,7 +41,7 @@ export class JobPostingComponent implements OnInit {
     };
     this.http
       //.post('http://localhost:8000/cornertree/api/job',job)
-      .post('cornertree/api/job',job)
+      .post('/cornertree/api/job',job)
       .subscribe({
         next: (res: any) => {
           console.log('response returned', res);
