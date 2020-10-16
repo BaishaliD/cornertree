@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
 const port = 8000;
-const db = require('./config/mongoose');
+// const db = require('./config/mongoose');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 //Middlewares
-app.use(express.json());
+app.use(bodyParser.json());
 
 //Route middleware
 // app.use('/cornertree/api',require('./route'));
