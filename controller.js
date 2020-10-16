@@ -71,7 +71,7 @@ module.exports.jobList = async function(req,res){
         console.log("jobs with given filter",jobs);
 
         return res.status(200).json({
-            message: "Jobs based on location",
+            message: "Jobs based on filters",
             data: jobs
         })
 

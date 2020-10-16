@@ -68,7 +68,7 @@ var states: State[] = [
 // ];
 
 //const filterList: State[] = [{"filter": "skill", "value":"java"}];
-var joblist = [];
+// var joblist = [];
 
 @Component({
   selector: 'app-home',
@@ -79,6 +79,7 @@ var joblist = [];
 export class HomeComponent {
   public model: State;
 
+  public joblist : any;
 
   formatter = (state: State) => state.value;
 
@@ -107,7 +108,7 @@ export class HomeComponent {
 
             this.http.get('/cornertree/api/joblist').subscribe({
               next: (resp:any) => {
-                joblist = resp
+                this.joblist = resp.data
               },
               error: (err) => console.log("cannot fetch job list")
             })
