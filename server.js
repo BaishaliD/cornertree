@@ -10,6 +10,9 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 // app.use(cors());
 
+
+var distDir = __dirname + "/dist/";
+ app.use(express.static(distDir));
 //Route middleware
 // app.use('/cornertree/api',require('./route'));
 
