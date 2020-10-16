@@ -8,8 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 //import { AllUsersComponent } from './user/all-users/all-users.component';
 
 const appRoutes: Routes = [
-  {path: 'home', component: HomeComponent},
-  {path: 'job-posting', component: JobPostingComponent},
+  {path: '/home', component: HomeComponent},
+  {path: '/job-posting', component: JobPostingComponent},
 //   {path: 'logout', redirectTo: '/add-user', pathMatch: 'full'},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
 ];
