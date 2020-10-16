@@ -7,14 +7,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { JobPostingComponent } from './job-posting/job-posting.component';
-import { Ng2CompleterModule } from "ng2-completer";
+// import { Ng2CompleterModule } from "ng2-completer";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     JobPostingComponent,
-    Ng2CompleterModule
+    // Ng2CompleterModule
   ],
   imports: [
     BrowserModule,

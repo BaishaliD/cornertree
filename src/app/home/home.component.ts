@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { CompleterService, CompleterData } from 'ng2-completer';
+// import { CompleterService, CompleterData } from 'ng2-completer';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   // stateForm: FormGroup;
   searchStr: String;
   captain: String;
-  dataService: CompleterData;
+  // dataService: CompleterData;
   input: String;
 
   protected searchData = [
@@ -36,12 +36,14 @@ export class HomeComponent implements OnInit {
     'Rachel Garrett',
   ];
   
-  constructor(completerService: CompleterService) {
-    this.dataService = completerService.local(
-      this.searchData,
-      'color',
-      'color'
-    );
+
+  constructor(public http: HttpClient ) {
+  //constructor(completerService: CompleterService) {
+    // this.dataService = completerService.local(
+    //   this.searchData,
+    //   'color',
+    //   'color'
+    // );
   }
 
   ngOnInit() {}

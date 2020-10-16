@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-// import { Injectable } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 
 @Component({
