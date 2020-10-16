@@ -6,14 +6,12 @@ const db = require('./config/mongoose');
 const mongoose = require("mongoose");
 
 //Middlewares
-// app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 // app.use(cors());
 
-
+// Create link to Angular build directory
 var distDir = __dirname + "/dist/";
- app.use(express.static(distDir));
-
+app.use(express.static(distDir));
 
 //database
 

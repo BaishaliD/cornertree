@@ -1,21 +1,21 @@
 {
   "name": "cornertree-job-portal",
   "version": "0.0.0",
-  "engines": {
-    "node" : "12.18.4"
-  },
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --output-path dist"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.1.2",
-    "@angular/common": "~10.1.2",
+    "@angular/common": "~10.1.2",    
+    "@angular/cli": "~10.1.2",
+    "@angular/compiler-cli": "~10.1.2",
     "@angular/compiler": "~10.1.2",
     "@angular/core": "~10.1.2",
     "@angular/forms": "~10.1.2",
@@ -35,8 +35,6 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1001.2",
-    "@angular/cli": "~10.1.2",
-    "@angular/compiler-cli": "~10.1.2",
     "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
