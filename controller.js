@@ -60,15 +60,15 @@ module.exports.createJob = async function(req,res){
     }
 }
 
-module.exports.getJobs = async function(req,res){
+module.exports.jobList = async function(req,res){
 
     var {filter,value} = req.query;
 
     try{
         let jobs = await Job.find({
-            'location' : req.params.location
+            filter : value
         });
-        console.log("jobs with given location",jobs);
+        console.log("jobs with given filter",jobs);
 
         return res.status(200).json({
             message: "Jobs based on location",

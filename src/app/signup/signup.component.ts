@@ -12,11 +12,11 @@ export class SignupComponent implements OnInit {
   constructor(public http: HttpClient) {}
 
   ngOnInit(): void {
-    document.getElementById('toast').style.display = "none";
+    // document.getElementById('toast').style.display = "none";
   }
 
   signUp(){
-      
+
   }
 
 }

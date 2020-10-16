@@ -9,3 +9,20 @@
        [editable]='false' />
 <hr>
 <pre>Model: {{ model | json }}</pre>
+
+<ul>
+    <li *ngFor = "let job of joblist">
+        Job Role : <div>{{job.jobRole}}</div> 
+        Function : <div>{{job.function}}</div>
+        Sub Function: <div>{{job.subFunction}}</div>
+        Company : <div>{{job.company}}</div>
+        Core skills : <div>{{job.coreSkills}}</div>
+        Soft skills : <div>{{job.softSkills}}</div>
+        Location : <div>{{job.location}}</div>
+        Pin : <div>{{job.pin}}</div>
+        Compensation : <div>{{job.compensation}}</div>
+<!-- 
+        <span *ngIf="(job.status)">Active</span>
+        <span *ngIf="!(job.status)">Inactive</span> -->
+    </li>
+</ul>

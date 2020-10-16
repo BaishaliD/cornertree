@@ -68,6 +68,7 @@ var states: State[] = [
 // ];
 
 //const filterList: State[] = [{"filter": "skill", "value":"java"}];
+var joblist = [];
 
 @Component({
   selector: 'app-home',
@@ -77,6 +78,7 @@ var states: State[] = [
 
 export class HomeComponent {
   public model: State;
+
 
   formatter = (state: State) => state.value;
 
@@ -102,6 +104,13 @@ export class HomeComponent {
           // filterList = res;
           res.data.forEach(element => {
             states.push(element);
+
+            this.http.get('/cornertree/api/joblist').subscribe({
+              next: (resp:any) => {
+                joblist = resp
+              },
+              error: (err) => console.log("cannot fetch job list")
+            })
           });
         },
         error: (err) => console.log('error in getting filters', err),
