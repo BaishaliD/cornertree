@@ -70,7 +70,7 @@ type State = {filter: string, value: string};
 //   {id: 58, name: 'Wyoming'}
 // ];
 
-var filterList: State[] = [];
+const filterList: State[] = [{"filter": "skill", "value":"java"}];
 
 @Component({
   selector: 'app-home',
@@ -102,10 +102,11 @@ export class HomeComponent {
       .subscribe({
         next: (res: any) => {
           console.log('filters returned', res);
-          filterList = res;
+          // filterList = res;
         },
         error: (err) => console.log('error in getting filters', err),
       });
+      
   }
 
 }
