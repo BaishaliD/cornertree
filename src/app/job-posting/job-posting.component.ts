@@ -14,7 +14,7 @@ export class JobPostingComponent implements OnInit {
   company: String;
   coreSkills: String[] = [];
   softSkills: String[] = [];
-  coreskill1; coreskill2; coreskill3; softskill1; softskill2; softskill3;
+  coreSkill1; coreSkill2; coreSkill3; softSkill1; softSkill2; softSkill3;
   location: String;
   pin: Number;
   compensation: Number;
@@ -28,12 +28,12 @@ export class JobPostingComponent implements OnInit {
 
   postJob() {
 
-    this.coreSkills.push(this.coreskill1);
-    this.coreSkills.push(this.coreskill2);
-    this.coreSkills.push(this.coreskill3);
-    this.softSkills.push(this.softskill1);
-    this.softSkills.push(this.softskill2);
-    this.softSkills.push(this.softskill3);
+    this.coreSkills.push(this.coreSkill1);
+    this.coreSkills.push(this.coreSkill2);
+    this.coreSkills.push(this.coreSkill3);
+    this.softSkills.push(this.softSkill1);
+    this.softSkills.push(this.softSkill2);
+    this.softSkills.push(this.softSkill3);
 
     var job = {
       jobRole : this.jobRole,
