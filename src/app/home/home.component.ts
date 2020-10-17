@@ -106,15 +106,15 @@ export class HomeComponent {
           res.data.forEach(element => {
             states.push(element);
 
-            this.http.get('/cornertree/api/joblist', {params: {
-              filter: this.model.filter,
-              value: this.model.value
-            }}).subscribe({
-              next: (resp:any) => {
-                this.joblist = resp.data
-              },
-              error: (err) => console.log("cannot fetch job list")
-            })
+            // this.http.get('/cornertree/api/joblist', {params: {
+            //   filter: this.model.filter,
+            //   value: this.model.value
+            // }}).subscribe({
+            //   next: (resp:any) => {
+            //     this.joblist = resp.data
+            //   },
+            //   error: (err) => console.log("cannot fetch job list")
+            // })
           });
         },
         error: (err) => console.log('error in getting filters', err),
