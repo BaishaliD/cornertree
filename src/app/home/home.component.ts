@@ -122,5 +122,9 @@ export class HomeComponent {
       
   }
 
+  searchJob(){
+    console.log("modelsss ",this.model);
+  }
+
 }
 
