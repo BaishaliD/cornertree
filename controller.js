@@ -66,15 +66,28 @@ module.exports.jobList = async function(req,res){
 
     console.log("filter & value",filter, value);
     try{
-        let jobs = await Job.find({
-            filter : value
-        });
-        console.log("jobs with given filter",jobs);
 
-        return res.status(200).json({
-            message: "Jobs based on filters",
-            data: jobs
-        })
+
+        let jobs = Job.find({filter:value}, function(err, result) {
+            if (err) throw err;
+            console.log(result);
+
+            return res.status(200).json({
+                message: "Jobs based on filters",
+                data: jobs
+            })
+          });
+
+
+        // let jobs = await Job.find({
+        //     filter : value
+        // });
+        // console.log("jobs with given filter",jobs);
+
+        // return res.status(200).json({
+        //     message: "Jobs based on filters",
+        //     data: jobs
+        // })
 
     }catch(err){
         console.log("error in creating new job", err);
