@@ -130,6 +130,8 @@ export class HomeComponent {
             }}).subscribe({
               next: (resp:any) => {
                 this.joblist = resp.data
+                console.log("response of filtered jobs",resp);
+                console.log(this.joblist);
                 this.showJobs = true;
               },
               error: (err) => console.log("cannot fetch job list")

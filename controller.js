@@ -64,6 +64,7 @@ module.exports.jobList = async function(req,res){
 
     var {filter,value} = req.query;
 
+    console.log("filter & value",filter, value);
     try{
         let jobs = await Job.find({
             filter : value
