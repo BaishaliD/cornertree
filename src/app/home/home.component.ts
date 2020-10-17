@@ -106,7 +106,10 @@ export class HomeComponent {
           res.data.forEach(element => {
             states.push(element);
 
-            this.http.get('/cornertree/api/joblist').subscribe({
+            this.http.get('/cornertree/api/joblist', {params: {
+              filter: this.model.filter,
+              value: this.model.value
+            }}).subscribe({
               next: (resp:any) => {
                 this.joblist = resp.data
               },
