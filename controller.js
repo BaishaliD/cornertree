@@ -68,13 +68,13 @@ module.exports.jobList = async function(req,res){
     try{
 
 
-        let jobs = Job.find({filter:value}, function(err, result) {
+        Job.find({filter:value}, function(err, result) {
             if (err) throw err;
             console.log(result);
 
             return res.status(200).json({
                 message: "Jobs based on filters",
-                data: jobs
+                data: result
             })
           });
 
