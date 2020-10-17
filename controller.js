@@ -60,28 +60,28 @@ module.exports.createJob = async function(req,res){
     }
 }
 
-// module.exports.jobList = async function(req,res){
+module.exports.jobList = async function(req,res){
 
-//     var {filter,value} = req.query;
+    var {filter,value} = req.query;
 
-//     try{
-//         let jobs = await Job.find({
-//             filter : value
-//         });
-//         console.log("jobs with given filter",jobs);
+    try{
+        let jobs = await Job.find({
+            filter : value
+        });
+        console.log("jobs with given filter",jobs);
 
-//         return res.status(200).json({
-//             message: "Jobs based on filters",
-//             data: jobs
-//         })
+        return res.status(200).json({
+            message: "Jobs based on filters",
+            data: jobs
+        })
 
-//     }catch(err){
-//         console.log("error in creating new job", err);
-//         res.status(400).send({
-//             message: "error in creating new job"
-//         })
-//     }
-// }
+    }catch(err){
+        console.log("error in creating new job", err);
+        res.status(400).send({
+            message: "error in creating new job"
+        })
+    }
+}
 
 module.exports.getFilter = async function(req,res){
     try{

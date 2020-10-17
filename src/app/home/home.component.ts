@@ -78,7 +78,7 @@ var states: State[] = [
 
 export class HomeComponent {
   public model: State;
-
+  showJobs: Boolean = false;
   public joblist : any;
 
   formatter = (state: State) => state.value;
@@ -123,7 +123,17 @@ export class HomeComponent {
   }
 
   searchJob(){
-    console.log("modelsss ",this.model);
+    // console.log("modelsss ",this.model);
+    this.http.get('/cornertree/api/joblist', {params: {
+              filter: this.model.filter,
+              value: this.model.value
+            }}).subscribe({
+              next: (resp:any) => {
+                this.joblist = resp.data
+                this.showJobs = true;
+              },
+              error: (err) => console.log("cannot fetch job list")
+            })
   }
 
 }
