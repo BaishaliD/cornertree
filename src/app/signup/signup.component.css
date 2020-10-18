@@ -59,8 +59,9 @@ body {
 	background: #179b81 !important;
 }
 .signup-form a {
-	color: #fff;	
+	color: rgb(92, 28, 28);	
 	text-decoration: underline;
+	cursor: pointer;
 }
 .signup-form a:hover {
 	text-decoration: none;

@@ -13,13 +13,7 @@ import {
 
 type State = { key: string; value: string };
 
-var states: State[] = [
-  // { key: '0', value: 'Alabama' },
-  // { key: '1', value: 'Alaska' },
-  // { key: '2', value: 'American Samoa' },
-  // { key: '3', value: 'Arizona' },
-  // { key: '4', value: 'Arkansas' },
-];
+var states: State[] = [];
 
 @Component({
   selector: 'app-home',
@@ -43,7 +37,6 @@ export class HomeComponent {
           .filter((state) => new RegExp(term, 'mi').test(state.value))
           .slice(0, 10)
       )
-      //map(term => filterList.filter(state => new RegExp(term, 'mi').test(state.value)).slice(0, 10))
     );
 
   constructor(public http: HttpClient) {}

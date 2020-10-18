@@ -1,63 +1,68 @@
 <div id="toast" class="jumbotron">
     <h1 class="display-4">Job posted!!</h1>
     <p class="lead">Would you like to share this Job Posting on social media?</p>
-      <img height="50" width="50" src="https://www.flaticon.com/svg/static/icons/svg/174/174848.svg">
-      <img height="50" width="50" src="https://www.flaticon.com/svg/static/icons/svg/145/145807.svg">
+      <img height="50" width="50" style="margin:10px" src="https://www.flaticon.com/svg/static/icons/svg/174/174848.svg">
+      <img height="50" width="50" style="margin:10px" src="https://www.flaticon.com/svg/static/icons/svg/145/145807.svg">
+
+      <div style="margin:10px">
+        <button class="btn btn-info" (click)="refresh()">Post another Job</button>
+      </div>
     
   </div>
+
 
 <form id="form" class="col-4">
     <div class="form-group">
       <label for="jobRole">Job role</label>
-      <input type="text" class="form-control" id="jobRole" [(ngModel)]="jobRole" name="jobRole" required>
+      <input type="text" class="form-control" id="jobRole" [(ngModel)]="jobRole" name="jobRole" >
     </div>
     <div class="form-group">
       <label for="function">Function</label>
-      <input type="text" class="form-control" id="function" [(ngModel)]="function" name="function" required>
+      <input type="text" class="form-control" id="function" [(ngModel)]="function" name="function" >
     </div>
     <div class="form-group">
         <label for="subFunction">Sub Function</label>
-        <input type="text" class="form-control" id="subFunction" [(ngModel)]="subFunction" name="subFunction" required>
+        <input type="text" class="form-control" id="subFunction" [(ngModel)]="subFunction" name="subFunction" >
       </div>
       <div class="form-group">
         <label for="company">Company</label>
-        <input type="text" class="form-control" id="company" [(ngModel)]="company" name="company" required>
+        <input type="text" class="form-control" id="company" [(ngModel)]="company" name="company" >
       </div>
       <div class="form-group">
         <label>Core skills</label>
-        <input type="text" class="form-control" id="coreSkill1" [(ngModel)]="coreSkill1" name="coreSkill1" required>
+        <input type="text" class="form-control" id="coreSkill1" [(ngModel)]="coreSkill1" name="coreSkill1" >
 
         <!-- <label for="coreSkill2">Core skills</label> -->
-        <input type="text" class="form-control" id="coreSkill2" [(ngModel)]="coreSkill2" name="coreSkill2" required>
+        <input type="text" class="form-control" id="coreSkill2" [(ngModel)]="coreSkill2" name="coreSkill2" >
 
         <!-- <label for="coreSkill3">Core skills</label> -->
-        <input type="text" class="form-control" id="coreSkill3" [(ngModel)]="coreSkill3" name="coreSkill3" required>
+        <input type="text" class="form-control" id="coreSkill3" [(ngModel)]="coreSkill3" name="coreSkill3" >
       </div>
       <div class="form-group">
         <label>Soft skills</label>
-        <input type="text" class="form-control" id="softSkill1" [(ngModel)]="softSkill1" name="softSkill1" required>
+        <input type="text" class="form-control" id="softSkill1" [(ngModel)]="softSkill1" name="softSkill1" >
 
         <!-- <label for="softSkill2">Soft skills</label> -->
-        <input type="text" class="form-control" id="softSkill2" [(ngModel)]="softSkill2" name="softSkill2" required>
+        <input type="text" class="form-control" id="softSkill2" [(ngModel)]="softSkill2" name="softSkill2" >
 
         <!-- <label for="softSkill3">Soft skills</label> -->
-        <input type="text" class="form-control" id="softSkill3" [(ngModel)]="softSkill3" name="softSkill3" required>
+        <input type="text" class="form-control" id="softSkill3" [(ngModel)]="softSkill3" name="softSkill3" >
       </div>
       <div class="form-group">
         <label for="location">Location</label>
-        <input type="text" class="form-control" id="location" [(ngModel)]="location" name="location" required>
+        <input type="text" class="form-control" id="location" [(ngModel)]="location" name="location" >
       </div>
       <div class="form-group">
         <label for="pin">PIN</label>
-        <input type="number" class="form-control" id="pin" [(ngModel)]="pin" name="pin" required>
+        <input type="text" class="form-control" id="pin" [(ngModel)]="pin" name="pin" >
       </div>
       <div class="form-group">
         <label for="compensation">Compensation</label>
-        <input type="number" class="form-control" id="compensation" [(ngModel)]="compensation" name="compensation" required>
+        <input type="text" class="form-control" id="compensation" [(ngModel)]="compensation" name="compensation" >
       </div>
       <div class="form-group">
         <label for="jd">Job description</label>
-        <input type="text" class="form-control" id="jd" [(ngModel)]="jd" name="jd" required>
+        <input type="text" class="form-control" id="jd" [(ngModel)]="jd" name="jd" >
       </div>
     <button class="btn btn-primary" (click)="postJob()">Add</button>
   </form>

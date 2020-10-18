@@ -5,6 +5,10 @@ const jobSchema = new mongoose.Schema({
         type: String,
         // required: true
     },
+    jobRole_l:{
+        type: String,
+        // required: true
+    },
     function: {
         type: String,
         // required: true
@@ -21,11 +25,19 @@ const jobSchema = new mongoose.Schema({
         type: [String],
         // required: true
     },
+    coreSkills_l: {
+        type: [String],
+        // required: true
+    },
     softSkills: {
         type: [String],
         // required: true
     },
     location: {
+        type: String,
+        // required: true
+    },
+    location_l: {
         type: String,
         // required: true
     },

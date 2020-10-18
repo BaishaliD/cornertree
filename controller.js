@@ -24,29 +24,42 @@ module.exports.createJob = async function (req, res) {
   const newJob = req.body;
 
   try {
+
+    // await Job.deleteMany({});
+    // await Filter.deleteMany({});
+    // return res.send({
+    //     msg: "DB deleted"
+    // });
+
+    var coreSkills_l = [];
+    newJob.coreSkills.forEach(element => {
+        if(element!=null)
+            coreSkills_l.push(element.toLowerCase());
+    });
+    console.log(coreSkills_l);
+
     const job = await Job.create({
       jobRole: newJob.jobRole,
+      jobRole_l : newJob.jobRole.toLowerCase(),
       function: newJob.function,
       subFunction: newJob.subFunction,
       company: newJob.company,
       coreSkills: newJob.coreSkills,
+      coreSkills_l: coreSkills_l,
       softSkills: newJob.softSkills,
       location: newJob.location,
+      location_l: newJob.location.toLowerCase(),
       pin: newJob.pin,
       compensation: newJob.compensation,
       jd: newJob.jd,
     });
 
     if (newJob.jobRole != "") {
-      console.log("new jobrole is not null");
       var oldJobRole = await Filter.find({
         key: "jobRole",
         value: newJob.jobRole,
       });
-      console.log("old job role", oldJobRole);
-      console.log(oldJobRole.length);
       if (oldJobRole.length == 0) {
-        console.log("filter does not exist");
         const filter = await Filter.create({
           key: "jobRole",
           value: newJob.jobRole,
@@ -56,15 +69,11 @@ module.exports.createJob = async function (req, res) {
     }
 
     if (newJob.location != "") {
-      console.log("new location is not null");
       var oldlocation = await Filter.find({
         key: "location",
         value: newJob.location,
       });
-      console.log("old job role", oldlocation);
-      console.log(oldlocation.length);
       if (oldlocation.length == 0) {
-        console.log("filter does not exist");
         const filter = await Filter.create({
           key: "location",
           value: newJob.location,
@@ -74,12 +83,9 @@ module.exports.createJob = async function (req, res) {
     }
 
     if (newJob.coreSkills.length != 0) {
-      console.log("new coreskill is not null");
-
       newJob.coreSkills.forEach(async (element) => {
         var oldSkill = await Filter.find({ key: "skill", value: element });
         if (oldSkill.length == 0) {
-          console.log("skill does not exist");
           if(element!=null){
           const filter = await Filter.create({
             key: "skill",
@@ -91,12 +97,6 @@ module.exports.createJob = async function (req, res) {
       });
     }
 
-    // for (let i = 0; i < 3; i++) {
-    //   filter.push({ filter: "skill", value: newJob.coreSkills[i] });
-    // }
-    // filter.push({ filter: "location", value: newJob.location });
-    // filter.push({ filter: "jobRole", value: newJob.jobRole });
-
     console.log("new job created");
     res.status(200).send({
       message: "new job created",
@@ -106,6 +106,7 @@ module.exports.createJob = async function (req, res) {
     console.log("error in creating new job", err);
     res.status(400).send({
       message: "error in creating new job",
+      error: err
     });
   }
 };
@@ -114,13 +115,15 @@ module.exports.jobList = async function (req, res) {
   var { key, value } = req.query;
 
   console.log("filter & value", key, value);
+
   try {
+
     let jobs = await Job.find({
         $or: [
-          { jobRole: value },
-          { location: value },
-          { coreSkills: { $in: [value] } },
-        ],
+        { jobRole_l: value.toLowerCase() },
+        { location_l: value.toLowerCase() },
+        { coreSkills_l: { $in: [value.toLowerCase()] } },
+        ]
       });
 
     return res.status(200).json({
@@ -128,9 +131,9 @@ module.exports.jobList = async function (req, res) {
         data: jobs
     })
   } catch (err) {
-    console.log("error in creating new job", err);
     res.status(400).send({
       message: "error in creating new job",
+      error: err
     });
   }
 };
@@ -143,9 +146,9 @@ module.exports.getFilter = async function (req, res) {
       data: filterArray,
     });
   } catch (err) {
-    console.log("Cannot send filter array", err);
     res.status(400).send({
       message: "Cannot send filter array",
+      error: err
     });
   }
 };

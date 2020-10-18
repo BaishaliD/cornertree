@@ -19,6 +19,7 @@ export class JobPostingComponent implements OnInit {
   pin: Number;
   compensation: Number;
   jd: String;
+  showForm: Boolean = true;
 
   constructor(public http: HttpClient) {}
 
@@ -26,8 +27,20 @@ export class JobPostingComponent implements OnInit {
     document.getElementById('toast').style.display = "none";
   }
 
+  refresh(){
+    window.location.reload();
+  }
+
   postJob() {
 
+    if(this.location==null){
+      window.alert("Please add a location");
+      return;
+    }
+    if(this.jobRole==null){
+      window.alert("Please add a Job role");
+      return;
+    }
     this.coreSkills.push(this.coreSkill1);
     this.coreSkills.push(this.coreSkill2);
     this.coreSkills.push(this.coreSkill3);
