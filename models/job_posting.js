@@ -17,11 +17,11 @@ const jobSchema = new mongoose.Schema({
         type: String,
         // required: true
     },
-    coreSkils: {
+    coreSkills: {
         type: [String],
         // required: true
     },
-    softSkils: {
+    softSkills: {
         type: [String],
         // required: true
     },
@@ -30,11 +30,11 @@ const jobSchema = new mongoose.Schema({
         // required: true
     },
     pin: {
-        type: Number,
+        type: String,
         // required: true
     },
     compensation: {
-        type: Number,
+        type: String,
         // required: true
     },
     jd: {

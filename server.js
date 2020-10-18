@@ -14,7 +14,6 @@ var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 
 //database
-
 const connection =
     "mongodb+srv://baishali:baishalidatta@cornertree.ung95.mongodb.net/cornertree?retryWrites=true&w=majority";
 
@@ -32,15 +31,15 @@ module.exports = server;
 
 //api routes
 
-app.post("/api/signup", function(req, res) {
+// app.post("/api/signup", function(req, res) {
 
-    var req_body = req.body;
+//     var req_body = req.body;
 
-    console.log("request body from server.js", req_body);
-    res.send({
-        status: 200,
-        data: req_body
-    })
-});
+//     console.log("request body from server.js", req_body);
+//     res.send({
+//         status: 200,
+//         data: req_body
+//     })
+// });
 
 
